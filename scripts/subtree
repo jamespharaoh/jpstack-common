@@ -20,6 +20,12 @@ if test "$#" != "1"; then
 
 fi
 
+function header {
+	echo "" >&2
+	echo "----- $1 -----" >&2
+	echo "" >&2
+}
+
 case "$1" in
 
 (add)
@@ -29,6 +35,8 @@ case "$1" in
 		IFS=: read subtree_owner subtree_name subtree_path <<<"$subtree"
 
 		subtree_repo="git@github.com:$subtree_owner/$subtree_name"
+
+		header "$subtree_name"
 
 		if test -d "$subtree_path"; then
 			echo "Skipping $subtree_path (already exists)" >&2
@@ -53,6 +61,8 @@ case "$1" in
 	for subtree in "${subtrees[@]}"; do
 
 		IFS=: read subtree_owner subtree_name subtree_path <<<"$subtree"
+
+		header "$subtree_name"
 
 		cd "../$subtree_name"
 
@@ -82,6 +92,8 @@ case "$1" in
 
 		subtree_repo="git@github.com:$subtree_owner/$subtree_name"
 
+		header "$subtree_name"
+
 		git subtree pull \
 			--prefix "$subtree_path" \
 			"$subtree_repo" \
@@ -100,6 +112,8 @@ case "$1" in
 		IFS=: read subtree_owner subtree_name subtree_path <<<"$subtree"
 
 		subtree_repo="git@github.com:$subtree_owner/$subtree_name"
+
+		header "$subtree_name"
 
 		git subtree push \
 			--prefix "$subtree_path" \
