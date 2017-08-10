@@ -38,7 +38,7 @@
 	<library name="hamcrest-core" type="jar" version="1.1"/>
 	<library name="hibernate-commons-annotations" type="jar" version="5.0.1.Final"/>
 	<library name="hibernate-core" type="jar" version="5.2.10.Final" source="yes"/>
-	<library name="hibernate-jpa-2.1-api" type="jar" version="1.0.0.Final"/>
+	<library name="hibernate-jpa-2.1-api" type="jar" version="1.0.0.Final" source="yes"/>
 	<library name="httpclient" type="jar" version="4.5.3" source="yes"/>
 	<library name="httpcore" type="jar" version="4.4.6"/>
 	<library name="httpmime" type="jar" version="4.5.3" source="yes"/>
