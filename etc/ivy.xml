@@ -91,6 +91,11 @@
 
 <!--
 		<dependency
+			org="org.hibernate.javax.persistence"
+			name="hibernate-jpa-2.1-api"
+			rev="1.0.0.Final"/>
+
+		<dependency
 			org="org.hibernate"
 			name="hibernate-validator"
 			rev="5.2.2.Final"/>
